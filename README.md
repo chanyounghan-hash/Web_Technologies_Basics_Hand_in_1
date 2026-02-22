@@ -19,13 +19,13 @@ Hand-in requirements:
 - Apply various CSS rules without using a framework
 
 
-## Project Structure
-'''
-├── index.html  - HTML Basics page
-├── CSS.html  - CSS Basics page
-├── contact.html  - Personal information page
-└── style.css  - External stylesheet
-'''
+Project Structure
+
+    ├── index.html  - HTML Basics page
+    ├── CSS.html  - CSS Basics page
+    ├── contact.html  - Personal information page
+    └── style.css  - External stylesheet
+
 
 The project consists of three linked HTML pages, all styled using a single external CSS file.
 
