@@ -18,8 +18,9 @@ Hand-in requirements:
 - Use media queries and at least 2 breakpoints
 - Apply various CSS rules without using a framework
 
+
+###Project Structure
 '''
-Project Structure
 ├── index.html  - HTML Basics page
 ├── CSS.html  - CSS Basics page
 ├── contact.html  - Personal information page
