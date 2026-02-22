@@ -1,0 +1,369 @@
+/* -------Global design variables------- */
+:root {
+  --bg: #0c0c0c;
+  --panel: rgba(34, 197, 94, 0.05);
+  --panel-border: rgba(34, 197, 94, 0.3);
+  --text: #d1fae5;
+  --muted: rgba(209, 250, 229, 0.6);
+  --accent: #22c55e;
+  --accent-2: #86efac;
+  --container: 980px;
+  --font: "Cascadia Code", "Fira Code", "Consolas", "Courier New", monospace;
+}
+
+/* -------Base------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+/* -------Body layout------- */
+body {
+  margin: 0;
+  font-family: var(--font);
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-main {
+  flex: 1;
+  padding: 20px 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.brand-mark {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* -------Scrollbar styling------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--panel-border);
+  border: 1px solid var(--accent);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+a {
+  color: var(--accent-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* -------Skip link------- */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  padding: 10px 12px;
+  background: #0b0b0b;
+  border: 1px solid var(--panel-border);
+  border-radius: 0;
+  color: var(--text);
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 12px;
+}
+
+/* -------Header------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 2px solid var(--accent);
+}
+
+.header-inner {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand-mark {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.brand-title {
+  margin: 0;
+  font-weight: 700;
+}
+
+.brand-subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* -------Navigation------- */
+.nav {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-link:hover {
+  background: var(--panel-border);
+  color: var(--accent);
+}
+
+.nav-link.is-active {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: bold;
+}
+
+/* -------Card component------- */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--accent);
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--accent);
+  border-left: 2px solid var(--accent);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
+}
+
+.page-title {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.lead {
+  margin: 0 0 16px 0;
+  color: var(--muted);
+}
+
+/* -------Table------- */
+.table-wrap {
+  overflow: auto;
+  border: 1px solid var(--panel-border);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--panel-border);
+  vertical-align: top;
+}
+
+.data-table thead th {
+  text-align: left;
+  background: var(--accent);
+  color: var(--bg);
+  position: sticky;
+  top: 0;
+  text-transform: uppercase;
+}
+
+code {
+  color: var(--accent-2);
+  background: rgba(34, 197, 94, 0.1);
+  padding: 2px 4px;
+}
+
+/* -------Code block------- */
+.code-block {
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--accent);
+  background: rgba(0, 0, 0, 0.35);
+  overflow: auto;
+}
+
+/* -------Callout------- */
+.callout {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px dashed var(--accent);
+  background: rgba(34, 197, 94, 0.06);
+}
+
+.callout-title {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+}
+
+
+/* -------Footer------- */
+.site-footer {
+  border-top: 2px solid var(--accent);
+  padding: 20px 0;
+  background: var(--bg);
+  font-size: 0.85rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-inner p {
+  margin: 4px 0;
+}
+
+/* -------Contact page------- */
+.personal-info-page {
+  text-align: center;
+  margin: 60px auto;
+  padding: 60px 40px;
+  width: 100%;
+}
+
+.big-info {
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+
+.big-info p {
+  margin: 20px 0;
+}
+
+/* -------Responsive design-------*/
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .data-table {
+    min-width: 620px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 14px;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .data-table {
+    min-width: 540px;
+  }
+}

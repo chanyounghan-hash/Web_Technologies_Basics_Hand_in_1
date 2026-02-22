@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Fundamentals LU — CSS Basics</title>
+  <meta name="description" content="Core CSS properties, rules, media queries, and a basic HTML/CSS template." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-terminal">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">▸</span>
+        <div class="brand-text">
+          <p class="brand-title">Web Fundamentals LU</p>
+          <p class="brand-subtitle">HTML & CSS Essentials</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">HTML</a>
+        <a class="nav-link is-active" href="CSS.html" aria-current="page">CSS</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="site-main" role="main">
+    <div class="container">
+      
+      <!-- Section explaining CSS properties -->
+      <section class="card">
+        <h1 class="page-title">Most Frequently Used CSS Properties</h1>
+        <p class="lead">
+          You can find a list of some of the most important CSS elements below
+        </p>
+
+        <!-- Table for Box Model properties -->
+        <h2>Box Model & Layout</h2>
+        <div class="table-wrap" role="region" aria-label="Box model properties table" tabindex="0">
+          <table class="data-table">
+            <thead>
+              <tr><th scope="col">Property</th><th scope="col">Purpose</th><th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+
+              <!-- CSS property example -->
+              <tr><td><code>margin</code></td><td>Outer spacing</td><td><code>margin: 20px;</code></td></tr>
+              <tr><td><code>padding</code></td><td>Inner spacing</td><td><code>padding: 10px;</code></td></tr>
+              <tr><td><code>border</code></td><td>Border styling</td><td><code>border: 1px solid #22c55e;</code></td></tr>
+              <tr><td><code>width</code></td><td>Element width</td><td><code>width: 100%;</code></td></tr>
+              <tr><td><code>height</code></td><td>Element height</td><td><code>height: 300px;</code></td></tr>
+              <tr><td><code>box-sizing</code></td><td>Box calculation method</td><td><code>box-sizing: border-box;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Flexbox</h2>
+        <div class="table-wrap" role="region" aria-label="Flexbox properties table" tabindex="0">
+          <table class="data-table">
+            <thead>
+              <tr><th scope="col">Property</th><th scope="col">Purpose</th><th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>display: flex</code></td><td>Enable flexbox</td><td><code>display: flex;</code></td></tr>
+              <tr><td><code>justify-content</code></td><td>Horizontal alignment</td><td><code>justify-content: center;</code></td></tr>
+              <tr><td><code>align-items</code></td><td>Vertical alignment</td><td><code>align-items: center;</code></td></tr>
+              <tr><td><code>flex-direction</code></td><td>Row or column</td><td><code>flex-direction: column;</code></td></tr>
+              <tr><td><code>gap</code></td><td>Spacing between items</td><td><code>gap: 20px;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Grid</h2>
+        <div class="table-wrap" role="region" aria-label="Grid properties table" tabindex="0">
+          <table class="data-table">
+            <thead>
+              <tr><th scope="col">Property</th><th scope="col">Purpose</th><th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>display: grid</code></td><td>Enable grid</td><td><code>display: grid;</code></td></tr>
+              <tr><td><code>grid-template-columns</code></td><td>Define columns</td><td><code>grid-template-columns: 1fr 1fr;</code></td></tr>
+              <tr><td><code>grid-template-rows</code></td><td>Define rows</td><td><code>grid-template-rows: auto auto;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Typography</h2>
+        <div class="table-wrap" role="region" aria-label="Typography properties table" tabindex="0">
+          <table class="data-table">
+            <thead>
+              <tr><th scope="col">Property</th><th scope="col">Purpose</th><th scope="col">Example</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>font-family</code></td><td>Font family</td><td><code>font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;</code></td></tr>
+              <tr><td><code>font-size</code></td><td>Font size</td><td><code>font-size: 16px;</code></td></tr>
+              <tr><td><code>font-weight</code></td><td>Font weight</td><td><code>font-weight: 600;</code></td></tr>
+              <tr><td><code>color</code></td><td>Text color</td><td><code>color: #d1fae5;</code></td></tr>
+              <tr><td><code>text-align</code></td><td>Text alignment</td><td><code>text-align: left;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Basic CSS Rules</h2>
+        <div class="table-wrap" role="region" aria-label="CSS rules table" tabindex="0">
+          <table class="data-table">
+            <thead>
+              <tr><th scope="col">Rule</th><th scope="col">Explanation</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Selector syntax</td><td><code>selector { property: value; }</code></td></tr>
+              <tr><td>End properties with <code>;</code></td><td>Required for consistent parsing.</td></tr>
+              <tr><td>Specificity hierarchy</td><td><code>id</code> &gt; <code>class</code> &gt; element selector.</td></tr>
+              <tr><td>Avoid inline CSS</td><td>Prefer external stylesheets for maintainability.</td></tr>
+              <tr><td>Prefer classes for styling</td><td>Classes are reusable and scalable.</td></tr>
+              <tr><td>Use responsive units</td><td>Use <code>rem</code>, <code>%</code>, <code>vh</code>, <code>vw</code> where appropriate.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Media Queries</h2>
+        <p>
+          Breakpoints allow layout to adapt to different screen sizes. This project uses two breakpoints:
+          <strong>768px</strong> (tablet) and <strong>480px</strong> (mobile).
+        </p>
+
+        <pre class="code-block" aria-label="Media query example"><code>/* Tablet */
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}</code></pre>
+      </section>
+
+      <section class="card">
+        <h2>Basic HTML + CSS Template</h2>
+        <p>This is a minimal pattern for a static site with an external stylesheet.</p>
+
+        <pre class="code-block" aria-label="HTML template"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;...&lt;/header&gt;
+    &lt;main&gt;...&lt;/main&gt;
+    &lt;footer&gt;...&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <div class="callout">
+          <h3 class="callout-title">Who am I?</h3>
+          <p>
+            Open <a href="contact.html">Contact</a> to see my information.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>Chanyoung Han - Web Technologies Bascis</p>
+    </div>
+  </footer>
+</body>
+</html>
