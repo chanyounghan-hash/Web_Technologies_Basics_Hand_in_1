@@ -18,13 +18,13 @@ Hand-in requirements:
 - Use media queries and at least 2 breakpoints
 - Apply various CSS rules without using a framework
 
-
+'''
 Project Structure
 ├── index.html  - HTML Basics page
 ├── CSS.html  - CSS Basics page
 ├── contact.html  - Personal information page
 └── style.css  - External stylesheet
-
+'''
 
 The project consists of three linked HTML pages, all styled using a single external CSS file.
 
