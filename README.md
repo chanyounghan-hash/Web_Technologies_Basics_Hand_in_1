@@ -75,14 +75,3 @@ The project uses a custom dark terminal theme with:
 - Consistent design system
 
 
----
-
-Responsive Design
-
-The website includes two breakpoints:
-
-css
-@media (max-width: 768px) { /* Tablet */ }
-@media (max-width: 480px) { /* Mobile */ }
-
-
