@@ -19,7 +19,7 @@ Hand-in requirements:
 - Apply various CSS rules without using a framework
 
 
-###Project Structure
+## Project Structure
 '''
 ├── index.html  - HTML Basics page
 ├── CSS.html  - CSS Basics page
